@@ -1,0 +1,18 @@
+.popup_closed{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: popup_closed 1.7s ease forwards;
+
+}
+
+@keyframes popup_closed{
+
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}

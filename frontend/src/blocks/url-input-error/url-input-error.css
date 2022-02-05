@@ -1,0 +1,12 @@
+.url-input-error{
+	position: absolute;
+	top: 63%;
+	left: 8%;
+}
+
+@media screen and (max-width: 525px){
+
+    .url-input-error{
+        top: 69%;
+    }
+}

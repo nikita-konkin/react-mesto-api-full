@@ -1,0 +1,11 @@
+.profile__description{
+	list-style-type: none;
+	padding: 0;
+	margin: 22px 0 25px 30px;
+}
+
+@media screen and (max-width: 768px){
+	.profile__description{
+		text-align: center;
+	}
+}

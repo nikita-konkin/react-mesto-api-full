@@ -1,0 +1,16 @@
+.form__set{
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    flex-direction: column;
+    display: flex;
+    min-width: 430px;
+}
+
+@media screen and (max-width: 525px){
+
+    .form__set {
+        min-width: 282px;
+    }
+}

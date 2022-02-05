@@ -1,0 +1,5 @@
+.element__user-photo-description{
+	margin: 25px 15px 31px 15px;
+	display: flex;
+	justify-content: space-between;
+}

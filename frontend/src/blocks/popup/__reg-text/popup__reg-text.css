@@ -1,0 +1,27 @@
+.popup__reg-text{
+	max-width: 358px;
+	max-height: 58px;
+
+	margin: 0 36px 60px 36px;
+
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 29px;
+	text-align: center;
+
+	color: #000000;
+}
+
+@media screen and (max-width: 768px){
+	.popup__reg-text{
+		margin: 0 18px 50px 18px;
+
+		font-size: 20px;
+		line-height: 24px;
+
+		width: 244px;
+		height: 48px;
+
+	}
+}

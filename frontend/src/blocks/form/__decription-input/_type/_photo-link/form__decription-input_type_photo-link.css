@@ -1,0 +1,7 @@
+.form__decription-input_type_photo-link{
+	color: black;
+}
+
+.form__decription-input_type_photo-link: :placeholder{
+	color: rgba(196, 196, 196, 1);
+}

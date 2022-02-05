@@ -1,0 +1,17 @@
+.profile__avatar-edit-cover{
+	position: absolute;
+	top: -2px;
+	right: -4px;
+	opacity: 0%;
+	width: 105%;
+    height: 105%;
+    border-radius: 53%;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.profile__avatar-edit-cover:hover{
+	background-color: rgba(0, 0, 0, .8);
+	opacity: 100%;
+	cursor: pointer;
+}

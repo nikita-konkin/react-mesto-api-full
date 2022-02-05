@@ -1,0 +1,12 @@
+.url-input-error_type_avatar{
+	position: absolute;
+	top: 53%;
+	left: 8%;
+}
+
+@media screen and (max-width: 525px){
+
+    .url-input-error_type_avatar{
+        top: 53%;
+    }
+}

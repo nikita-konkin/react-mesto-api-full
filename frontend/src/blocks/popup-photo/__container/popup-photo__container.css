@@ -1,0 +1,24 @@
+.popup-photo__container{
+
+    max-width: 65vw;
+    max-height: 60vw;
+    background-color: transparent;
+    border: none;
+    object-fit: cover;
+
+    position: relative;
+    transition: 200ms ease;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+@media screen and (max-width: 525px){
+	.popup-photo__container{
+		max-width: 282px;
+		/*min-height: 322px;*/
+
+	}
+}
