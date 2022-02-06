@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import logo from '../images/logo.svg';
 import hamburgerBtn from '../images/hamburger_btn.svg';
 import { Link } from 'react-router-dom';
@@ -54,7 +54,7 @@ function Header(props) {
       </div>
       )
   }
-  
+
 
   return (
     <>
@@ -62,7 +62,7 @@ function Header(props) {
     <header className="header">
       <img src={logo} className="header__logo" alt="Логотип" />
       <div className="header__status-wrap">
-      {hamburgerHandler()}      
+      {hamburgerHandler()}
       </div>
     </header>
     </>
