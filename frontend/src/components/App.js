@@ -28,12 +28,7 @@ import {
 } from '../context/CurrentUserContext.js'
 import ProtectedRoute from "./ProtectedRoute";
 import InfoTooltip from "./InfoTooltip";
-// import {
-//   useCookies
-// } from 'react-cookie';
-// import Cookies from 'universal-cookie';
-// import Cookies from "js-cookies";
-// import jwt_decode from "jwt-decode";
+
 
 function App() {
 
@@ -248,12 +243,6 @@ function App() {
     }
   }
 
-  function refresh (isReload){
-    if (isReload) {
-      window.location.reload(false)
-    }
-    // setReload(false)
-  }
 
   return (
 
