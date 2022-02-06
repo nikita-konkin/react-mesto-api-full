@@ -1,6 +1,6 @@
 # react-mesto-api-full
 Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположите в директории `backend/`, а фронтенд - в `frontend/`.
 
-Проект расположен по адресу https://mesto.niki-konkin.nomoredomains.work/
-API досткупны по https://api.mesto.niki-konkin.nomoredomains.work/
-Публичный IP адресс 84.201.158.113
+- Проект расположен по адресу https://mesto.niki-konkin.nomoredomains.work/
+- API доступны по https://api.mesto.niki-konkin.nomoredomains.work/
+- Публичный IP адресс 84.201.158.113
