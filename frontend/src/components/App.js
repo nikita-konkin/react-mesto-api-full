@@ -72,11 +72,7 @@ function App() {
 
   useEffect(() => {
 
-    api.getInitialCards().then(data => {
-      setCardsArray(data.data)
-    }).catch(err => {
-      console.log(err)
-    })
+    refreshCardsData()
 
   }, []);
 
@@ -144,6 +140,14 @@ function App() {
     });
   }
 
+  function refreshCardsData() {
+    api.getInitialCards().then(data => {
+      setCardsArray(data.data)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
   function handleUpdateAvatar(data) {
     api.patchAvatar(data.avatar.value).then(data => {
       setCurrentUser(data.data)
@@ -206,6 +210,7 @@ function App() {
     setLink('')
 
     refreshProfileData()
+    refreshCardsData()
   }
 
   function handleAuthorization(data) {
