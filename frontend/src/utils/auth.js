@@ -60,7 +60,7 @@ class Auth {
 }
 
 export const auth = new Auth({
-  authorizationUrl: 'http://api.mesto.niki-konkin.nomoredomains.work',
+  authorizationUrl: 'https://api.mesto.niki-konkin.nomoredomains.work',
   headersAuth: {
     'Content-Type': 'application/json'
   },
