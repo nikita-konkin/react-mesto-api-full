@@ -1,0 +1,11 @@
+.header__mobile-menu{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media screen and (min-width: 520px){
+	.header__mobile-menu{
+		display: none;
+	}
+}

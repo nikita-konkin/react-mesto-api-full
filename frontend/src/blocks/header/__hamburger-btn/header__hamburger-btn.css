@@ -1,0 +1,9 @@
+.header__hamburger-btn{
+	margin: 35px 30px 0;
+	max-height: 22px;
+}
+
+.header__hamburger-btn:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}

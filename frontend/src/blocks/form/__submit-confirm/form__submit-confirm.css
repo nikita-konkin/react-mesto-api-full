@@ -1,0 +1,35 @@
+.form__submit-confirm{
+	border: 0;
+	margin: 38px auto 37px auto;
+
+	max-width: 358px;
+	width: 100%;
+	min-height: 50px;
+	background-color: black;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	color: white;
+	border-radius: 2px;
+}
+
+.form__submit-confirm:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 525px){
+	.form__submit-confirm{
+		margin: 38px auto 25px auto;
+
+		max-width: 238px;
+		min-height: 46px;
+
+		font-size: 14px;
+		line-height: 17px;
+
+	}
+}

@@ -1,0 +1,12 @@
+.element__user-photo{
+	max-width: 282px;
+	max-height: 282px;
+  height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.element__user-photo:hover{
+
+	cursor: pointer;
+}

@@ -1,0 +1,12 @@
+.career-input-error{
+	position: absolute;
+	top: 63%;
+	left: 8%;
+}
+
+@media screen and (max-width: 525px){
+
+    .career-input-error{
+        top: 69%;
+    }
+}

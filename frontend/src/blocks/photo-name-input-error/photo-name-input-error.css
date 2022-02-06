@@ -1,0 +1,13 @@
+.photo-name-input-error{
+    margin-top: 2px;
+	position: absolute;
+    top: 40%;
+    left: 8%;
+}
+
+@media screen and (max-width: 525px){
+
+    .photo-name-input-error{
+        top: 41%;
+    }
+}

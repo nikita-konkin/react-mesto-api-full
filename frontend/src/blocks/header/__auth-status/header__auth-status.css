@@ -1,0 +1,31 @@
+.header__auth-status{
+	
+	margin: 51px 0;
+
+	max-width: 53px;
+	max-height: 22px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+
+	color: #CCCCCC;
+
+	text-decoration: none;
+	text-align: right;
+}
+
+.header__auth-status:hover{
+	opacity:0.6;
+}
+
+@media screen and (max-width: 768px){
+	.header__auth-status{
+		margin-right: 30px;
+		min-width: 89px;
+		min-height: 17px;
+		font-size: 14px;
+    line-height: 17px;
+	}
+}

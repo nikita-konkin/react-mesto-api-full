@@ -1,0 +1,14 @@
+.authorization{
+
+	margin: 0 auto 0 auto; 
+
+	display: flex;
+	flex-flow: column;
+	max-width:358px;
+	align-items: center;
+
+	border-radius: 2px;
+	
+	color: #FFFFFF;
+
+}
