@@ -4,10 +4,10 @@
 	right: -4px;
 	opacity: 0%;
 	width: 105%;
-    height: 105%;
-    border-radius: 53%;
-    background-color: transparent;
-    transition: 0.3s;
+  height: 105%;
+  border-radius: 53%;
+  background-color: transparent;
+  transition: 0.3s;
 }
 
 .profile__avatar-edit-cover:hover{
