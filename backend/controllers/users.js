@@ -12,7 +12,7 @@ module.exports.login = (req, res, next) => {
     email,
     password,
   } = req.body;
-  console.log('server -' + email);
+
   User.findOne({
       email,
     }).select('+password')
@@ -20,18 +20,16 @@ module.exports.login = (req, res, next) => {
       if (!user) {
         return Promise.reject(new Error('Неправильные почта или пароль'));
       }
-
       req.user = user;
-      console.log('server - ' + req.user);
 
       return bcrypt.compare(password, user.password);
+
     })
     .then((matched) => {
 
       if (!matched) {
         return Promise.reject(new Error('Неправильные почта или пароль'));
       }
-      console.log('server - ' + matched);
       const token = jwt.sign({
         _id: req.user._id,
       }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
@@ -40,11 +38,7 @@ module.exports.login = (req, res, next) => {
           httpOnly: true,
         })
         .end("{}");
-
-      // console.log(token);
-      // return res.send('cocked');
     })
-    // .then(() => res.send('cocked'))
     .catch((err) => {
       const e = new Error(err.message);
       e.statusCode = 401;

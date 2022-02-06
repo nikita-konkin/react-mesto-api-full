@@ -12,17 +12,22 @@ const {
   Joi,
 } = require('celebrate');
 
-const allowedCors = [
-  'https://praktikum.tk',
-  'http://praktikum.tk',
-  'http://localhost:3001',
-];
+const {
+  reqwestLogger,
+  errorLogger
+} = require('./middlewares/logger')
 
 const {
   login,
   createUser,
 } = require('./controllers/users');
 const auth = require('./middlewares/auth');
+
+const allowedCors = [
+  'https://praktikum.tk',
+  'http://praktikum.tk',
+  'http://localhost:3001',
+];
 
 const {
   PORT = 3000,
@@ -35,7 +40,7 @@ app.use(function(req, res, next) {
   const {
     origin
   } = req.headers;
-  console.log(origin);
+
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', true);
@@ -51,7 +56,7 @@ app.use(function(req, res, next) {
   const {
     method
   } = req;
-  console.log(method);
+
   if (method === 'OPTIONS') {
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
     res.header('Access-Control-Allow-Headers', requestHeaders);
@@ -79,6 +84,13 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
     console.warn('Connected to MongoDB');
   }
 });
+
+app.use(reqwestLogger)
+
+app.post('/signup', createUser)
+app.post('/signin', login)
+app.post('/users', require('./routes/users'))
+app.post('/cards', require('./routes/cards'));
 
 app.post('/signin', celebrate({
   body: Joi.object().keys({
@@ -111,7 +123,7 @@ app.use(auth);
 app.use('/users', require('./routes/users'));
 app.use('/cards', require('./routes/cards'));
 
-
+app.use(errorLogger)
 
 app.use(errors());
 app.use((req, res, next) => {

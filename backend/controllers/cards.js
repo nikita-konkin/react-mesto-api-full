@@ -8,7 +8,7 @@ module.exports.createCard = (req, res, next) => {
     createdAt,
   } = req.body;
   const owner = req.user._id;
-  console.log(req.body);
+
   Card.create({
     name,
     link,
