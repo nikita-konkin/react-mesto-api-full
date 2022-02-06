@@ -109,9 +109,9 @@ class Api {
 }
 
 export const api = new Api({
-  cardsUrl: 'http://localhost:3000/cards',
-  avatarsUrl: 'http://localhost:3000/users/me/avatar',
-  profileUrl: 'http://localhost:3000/users/me',
+  cardsUrl: 'http://api.mesto.niki-konkin.nomoredomains.work/cards',
+  avatarsUrl: 'http://api.mesto.niki-konkin.nomoredomains.work/users/me/avatar',
+  profileUrl: 'http://api.mesto.niki-konkin.nomoredomains.work/users/me',
   // likesUrl: 'http://localhost:3000/cards/likes',
   headers: {
     // authorization: '6dcc8eb5-b36f-4e58-925f-68f8caf1b64a',
