@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Register(props){
@@ -10,7 +10,7 @@ export default function Register(props){
 		props.setHeaderIdState()
   }, []);
 
-  
+
   function handleAuthorization(e){
   	e.preventDefault()
 
@@ -30,7 +30,7 @@ export default function Register(props){
 
 	return(
 		<form onSubmit={handleAuthorization} className="authorization">
-		
+
 			<h1 className="authorization__header">Регистрация</h1>
 			<input onChange={handleChangeMail} value={mail} type="text" name="email"
 			className="authorization__email-input" placeholder="Email"
