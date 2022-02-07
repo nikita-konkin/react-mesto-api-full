@@ -14,8 +14,8 @@ module.exports.login = (req, res, next) => {
   } = req.body;
 
   User.findOne({
-      email,
-    }).select('+password')
+    email,
+  }).select('+password')
     .then((user) => {
       if (!user) {
         return Promise.reject(new Error('Неправильные почта или пароль'));
@@ -23,10 +23,8 @@ module.exports.login = (req, res, next) => {
       req.user = user;
 
       return bcrypt.compare(password, user.password);
-
     })
     .then((matched) => {
-
       if (!matched) {
         return Promise.reject(new Error('Неправильные почта или пароль'));
       }
@@ -34,15 +32,14 @@ module.exports.login = (req, res, next) => {
         _id: req.user._id,
       }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
       res.cookie('jwt', token, {
-          maxAge: 900000,
-          httpOnly: true,
-        })
-        .end("{}");
+        maxAge: 900000,
+        httpOnly: true,
+      })
+        .end('{}');
     })
     .catch((err) => {
       const e = new Error(err.message);
       e.statusCode = 401;
-      console.log(err);
       next(e);
     });
 };
@@ -157,11 +154,11 @@ module.exports.updateAvatar = (req, res, next) => {
   } = req.body;
 
   User.findByIdAndUpdate(req.user._id, {
-      avatar,
-    }, {
-      new: true,
-      runValidators: true,
-    })
+    avatar,
+  }, {
+    new: true,
+    runValidators: true,
+  })
     .then((avatarLink) => {
       res.send({
         data: avatarLink,
@@ -186,12 +183,12 @@ module.exports.updateUserProfile = (req, res, next) => {
     about,
   } = req.body;
   User.findByIdAndUpdate(req.user._id, {
-      name,
-      about,
-    }, {
-      new: true,
-      runValidators: true,
-    })
+    name,
+    about,
+  }, {
+    new: true,
+    runValidators: true,
+  })
     .then((data) => {
       res.send({
         data,
