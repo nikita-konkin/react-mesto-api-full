@@ -14,8 +14,8 @@ const {
 
 const {
   reqwestLogger,
-  errorLogger
-} = require('./middlewares/logger')
+  errorLogger,
+} = require('./middlewares/logger');
 
 const {
   login,
@@ -36,10 +36,9 @@ const {
 
 const app = express();
 
-app.use(function(req, res, next) {
-
+app.use((req, res, next) => {
   const {
-    origin
+    origin,
   } = req.headers;
 
   if (allowedCors.includes(origin)) {
@@ -50,19 +49,18 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(function(req, res, next) {
-  const DEFAULT_ALLOWED_METHODS = "GET,HEAD,PUT,PATCH,POST,DELETE";
+app.use((req, res, next) => {
+  const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
   const requestHeaders = req.headers['access-control-request-headers'];
 
   const {
-    method
+    method,
   } = req;
 
   if (method === 'OPTIONS') {
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
     res.header('Access-Control-Allow-Headers', requestHeaders);
     return res.end();
-
   }
   next();
 });
@@ -86,12 +84,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   }
 });
 
-app.use(reqwestLogger)
-
-app.post('/signup', createUser)
-app.post('/signin', login)
-app.post('/users', require('./routes/users'))
-app.post('/cards', require('./routes/cards'));
+app.use(reqwestLogger);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
@@ -108,8 +101,8 @@ app.post('/signin', celebrate({
 
 const validateURL = (value) => {
   if (!validator.isURL(value, {
-      require_protocol: true,
-    })) {
+    require_protocol: true,
+  })) {
     throw new Error('Неправильный формат ссылки');
   }
   return value;
@@ -130,7 +123,7 @@ app.use(auth);
 app.use('/users', require('./routes/users'));
 app.use('/cards', require('./routes/cards'));
 
-app.use(errorLogger)
+app.use(errorLogger);
 
 app.use(errors());
 app.use((req, res, next) => {
